@@ -1,0 +1,40 @@
+{
+  "name": "@totalpave/sympy-client",
+  "version": "0.0.1",
+  "description": "Node interface to Sympy",
+  "main": "lib/api.js",
+  "types": "lib/api.d.ts",
+  "scripts": {
+    "lint": "node --max_old_space_size=6144 ./node_modules/eslint/bin/eslint.js --ext .ts '?(src|spec)/**/*.ts' --cache",
+    "build": "npm run lint && tsc",
+    "test": "npm run-script lint && nyc --reporter=lcov --reporter=text ts-node ./spec/support/jasmine.ts",
+    "docs": "typedoc --options typedoc.json",
+    "prepublishOnly": "npm run-script build",
+    "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore --issue-pattern '[A-Z]+-\\d+' --issue-url https://totalpave.atlassian.net/browse/{id}",
+    "version": "npm run changelog && git add CHANGELOG.md && git commit -m 'chore: changelog' && git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/totalpave/sympy-client-node.git"
+  },
+  "author": "norman.breau@totalpave.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/totalpave/sympy-client-node/issues"
+  },
+  "homepage": "https://github.com/totalpave/sympy-client-node#readme",
+  "devDependencies": {
+    "@breautek/jasmine": "3.5.1",
+    "@totalpave/eslint-plugin": "2.3.3",
+    "@typescript-eslint/eslint-plugin": "2.21.0",
+    "@typescript-eslint/parser": "2.21.0",
+    "auto-changelog": "1.16.2",
+    "eslint": "6.8.0",
+    "jasmine-spec-reporter": "4.2.1",
+    "nyc": "15.0.0",
+    "ts-node": "8.6.2",
+    "tsutils": "3.17.1",
+    "typedoc": "0.16.11",
+    "typescript": "3.8.3"
+  }
+}

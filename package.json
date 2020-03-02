@@ -11,7 +11,7 @@
     "docs": "typedoc --options typedoc.json",
     "prepublishOnly": "npm run-script build",
     "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore --issue-pattern '[A-Z]+-\\d+' --issue-url https://totalpave.atlassian.net/browse/{id}",
-    "version": "npm run changelog && git add CHANGELOG.md && git commit -m 'chore: changelog' && git push && git push --tags",
+    "version": "npm run changelog && git add CHANGELOG.md && git commit -m 'chore: changelog' && sleep 1 && git push && git push --tags",
     "postinstall": "./scripts/postInstall.sh"
   },
   "repository": {

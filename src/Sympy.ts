@@ -48,6 +48,11 @@ export class Sympy {
         let buffer: string = await Sympy._exec('simplify', [ expression ]);
         return buffer;
     }
+
+    public static async expand(expression: string): Promise<string> {
+        let buffer: string = await Sympy._exec('expand', [ expression ]);
+        return buffer;
+    }
 }
 
 export default Sympy;

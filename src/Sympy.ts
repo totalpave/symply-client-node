@@ -3,7 +3,7 @@
 import * as ChildProcess from 'child_process';
 import * as Path from 'path';
 
-const CLIENT_PATH: string = Path.resolve('./sympy-client');
+const CLIENT_PATH: string = Path.resolve(__dirname, '../sympy-client');
 
 export class Sympy {
     private static _exec(command: string, args: Array<string> = []): Promise<string> {

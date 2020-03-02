@@ -1,6 +1,6 @@
 {
   "name": "@totalpave/sympy-client",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Node interface to Sympy",
   "main": "lib/api.js",
   "types": "lib/api.d.ts",
